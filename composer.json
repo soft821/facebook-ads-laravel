@@ -1,50 +1,56 @@
 {
-  "name": "nikolajlovenhardt/laravel-facebook-ads",
-  "type": "library",
-  "description": "Facebook integration for Laravel",
-  "keywords": [
-    "laravel",
-    "ads",
-    "facebook"
-  ],
-  "homepage": "https://github.com/nikolajlovenhardt/laravel-facebook-ads",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Nikolaj Petersen",
-      "email": "nikolaj.lovenhardt@gmail.com",
-      "homepage": "http://github.com/nikolajlovenhardt"
-    }
-  ],
-  "require": {
-    "php": ">=5.5.0",
-    "laravel/framework": "5.*",
-    "facebook/php-ads-sdk": "~3.0.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~4.0",
-    "codeclimate/php-test-reporter": "dev-master",
-    "phpmd/phpmd" : "1.4.*",
-    "mockery/mockery": "~0.9.4"
-  },
-  "autoload": {
-    "psr-4": {
-      "LaravelFacebookAds\\": "src/LaravelFacebookAds"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "LaravelFacebookAdsTests\\": "tests/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "LaravelFacebookAds\\LaravelFacebookAdsProvider"
-      ],
-      "aliases": {
-        "FacebookAds": "LaravelFacebookAds\\Facades\\FacebookAdsFacade"
+    "name": "edbizarro/laravel-facebook-ads",
+    "type": "library",
+    "description": "Facebook & Instagram Ads for Laravel 5.6",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "facebook",
+        "instagram",
+        "ads",
+        "insights",
+        "sdk",
+        "php"
+    ],
+    "authors": [
+        {
+            "name": "Eduardo Bizarro",
+            "email": "edbizarro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.13",
+        "facebook/php-business-sdk": "^3.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "~7.0",
+        "friendsofphp/php-cs-fixer": "^2.11"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "Edbizarro\\LaravelFacebookAds\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelFacebookAds\\Test\\": "tests/"
+        }
+    },
+    "config":{
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Edbizarro\\LaravelFacebookAds\\Providers\\LaravelFacebookServiceProvider"
+        ]
       }
     }
-  }
 }
